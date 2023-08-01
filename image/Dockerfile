@@ -27,6 +27,9 @@ RUN npm install
 
 COPY orquesta /orquesta
 WORKDIR /orquesta
+# TODO: Fix? (not needed for dev image, but for consistency with Dockerfile.prod)
+RUN echo "greenlet~=2.0" >> requirements.txt
+RUN sed -i "s/stevedore>=1.3.0/stevedore~=3.0/g" requirements.txt
 RUN pip install -e .
 
 WORKDIR /web
