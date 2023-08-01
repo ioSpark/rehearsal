@@ -7,10 +7,10 @@ down:
 	docker-compose down
 
 build:
-	docker build -t trstruth/rehearsal:dev ./image
+	docker build -t ghcr.io/iospark/rehearsal:dev ./image
 
 build-prod:
-	docker build -t trstruth/rehearsal:$(VERSION) -f ./image/Dockerfile.prod ./image
+	docker build -t ghcr.io/iospark/rehearsal:$(VERSION) -f ./image/Dockerfile.prod ./image
 
 push:
-	docker push trstruth/rehearsal:$(VERSION)
+	docker push ghcr.io/iospark/rehearsal:$(VERSION)
